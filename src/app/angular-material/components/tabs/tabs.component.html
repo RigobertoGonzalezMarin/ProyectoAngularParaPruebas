@@ -1,0 +1,33 @@
+<div class="main">
+    <div class="container-tabs">
+
+        <mat-tab-group animationDuration = "0ms" (selectedIndexChange)="index = $event">
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon class="example-tab-icon" left>thumb_up</mat-icon>
+                    First
+                </ng-template>
+                Content 1
+            </mat-tab>
+        
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon  class="example-tab-icon" >add-box</mat-icon>
+                    Third
+                </ng-template>
+                Content 2
+            </mat-tab>
+        
+            <mat-tab  label="Signup">
+                
+        
+                <ng-template mat-tab-label>
+                    Third
+                    <mat-icon class="example-tab-icon" >refresh</mat-icon>
+                </ng-template>
+
+                Content 3
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

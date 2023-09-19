@@ -1,0 +1,20 @@
+<div class="row">
+    <button class="btn btn-primary"
+        (click)="changeValue()">
+        Cambiar
+    </button>
+</div>
+
+<div class="row squart">
+    <div class="col-12">
+        <ng-template #showList>
+            <div *ngFor="let item of data" class="row">
+                <div class="col-3">{{item.name}}</div>
+                <div class="col-3">{{item.age}}</div>
+                <div class="col-3">{{item.city}}</div>
+                <div class="col-3">{{item.status}}</div>
+            </div>
+        </ng-template>
+
+    </div>
+</div>

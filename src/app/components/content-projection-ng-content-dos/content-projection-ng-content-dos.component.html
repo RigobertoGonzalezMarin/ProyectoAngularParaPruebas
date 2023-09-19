@@ -1,0 +1,43 @@
+<div class="main">
+    <h3>Soy el componente hijo</h3>
+    <h2>Proyección de contenido de una sola ranura</h2>
+    <div class="row">
+        <div class="col">
+            En la siguiente fila ira el contenido proyectado mediante ng-content:
+        </div>
+    </div>
+    <div class="color-orange">
+
+            <ng-content
+            *ngIf="1 === valor">
+                
+            </ng-content>
+
+    </div>
+    <br>
+    <hr>
+    <h2>Proyección de contenido de múltiples ranuras</h2>
+    <div class="color-orange contenido1">
+        <ng-content select="[contenido1]">
+            
+        </ng-content>
+    </div>
+    <div class="color-orange contenido2">
+        <ng-content select="[contenido2]">
+            
+        </ng-content>
+    </div>
+    <div class="color-orange contenido3">
+        <ng-container >
+            <ng-template select="[contenido3]">
+            
+            </ng-template>
+        </ng-container>
+    </div>
+    <br>
+    <hr>
+    <h2>Proyección de contenido condicional</h2>
+    <div class="color-orange">
+        
+    </div>
+</div>

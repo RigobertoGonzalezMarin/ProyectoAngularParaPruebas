@@ -1,0 +1,40 @@
+<h3>Uso de directivas de atributo</h3>
+<div>
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+    <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+
+<hr>
+<p [appChangeColor]="color"  defaultColor="" threeColor="orange">Usando la directiva change-color</p>
+
+<br><br><br>
+<h3>Uso de directiva ngNonBindable</h3>
+
+<p>Uso de "ngNonBindable" para evitar la evalución entre corchetes.</p>
+<!-- ngNonBindable evita que se evulua los corchetes  -->
+<div ngNonBindable [appChangeColor]="'red'">
+    This should not evaluate: {{ 1 + 1 }}
+    <!-- Marca error al establecer esta directiva de atributo debido a que se tiene ngNonBindable como padre -->
+    <!-- <div [appChangeColor]="'red'">Nuevo valores</div> -->
+</div>
+
+<br><br><br>
+<h3>Uso de directivas estructurales</h3>
+<div>
+    <label for="txtRol">Cambiar el rol</label>
+    <input type="number" id="txtRol" #txtRol>
+    <button 
+        (click)="conditionRol = txtRol.value">
+        Cambiar
+    </button>
+</div>
+
+<p *appEstructRol="conditionRol" [appChangeColor]="'gray'">Este es el rol de administrador</p>
+
+<br><br><br>
+<h3>Uso de HostBinding</h3>
+    <input type="text" appHostBinding class="txt-12 color-red">
+<div>
+
+</div>

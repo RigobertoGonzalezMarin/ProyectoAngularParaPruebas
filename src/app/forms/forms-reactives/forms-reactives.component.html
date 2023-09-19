@@ -1,0 +1,82 @@
+<h2>Uso principal de formulario reactivos con validadores</h2>
+
+<h4>Validadores personalizados</h4>
+
+<div>
+  <form [formGroup]="heroForm">
+    <label for="name">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      id="name"
+      formControlName="name"
+      required
+    />
+  </form>
+</div>
+
+<div
+  class="alert alert-danger"
+  *ngIf="name.invalid && (name.dirty || name.touched)"
+>
+  <div *ngIf="name.errors?.['required']">El nombre es requerido.</div>
+  <div *ngIf="name.errors?.['minlength']">
+    El nombre debe de tener mínimo 4 caracteres
+  </div>
+  <div *ngIf="name.errors?.['nameNotAllowed']">
+    No se permite usar este nombre
+  </div>
+</div>
+
+<br /><br /><br />
+<hr />
+<h4>Uso de validación cruzada</h4>
+
+<div class="form2">
+  <form [formGroup]="heroFormCrossed">
+    <div class="">
+      <label for="name">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        name="name"
+        id="name"
+        required
+      />
+    </div>
+    <div class="">
+      <label for="otherName">Otro nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="otherName"
+        name="otherName"
+        id="otherName"
+        required
+      />
+    </div>
+    <div class="async">
+      <label for="alias">Alias</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="alias"
+        name="alias"
+        id="alias"
+        required
+        [ngClass]="heroFormCrossed.pending ? 'icon-loading' : ''"
+      />
+    </div>
+  </form>
+
+  <div
+    class="alert alert-danger"
+    *ngIf="heroFormCrossed.errors?.['duplicateName'] 
+            && (heroFormCrossed.touched || heroFormCrossed.dirty)"
+  >
+    Los nombres deben de ser diferentes
+  </div>
+  <div class="alert" *ngIf="heroFormCrossed.pending">cargando...</div>
+</div>

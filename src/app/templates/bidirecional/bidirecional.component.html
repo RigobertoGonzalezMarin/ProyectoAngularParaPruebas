@@ -1,0 +1,13 @@
+<h3> Tamaños de fuentess para la página</h3>
+
+<span>El valor de mySizePersonalice es: 
+    <input type="text" id="" [(ngModel)]="mySizePersonalice"> 
+</span>
+
+<hr>
+
+<app-bidirecional-dos
+    [(size)]="mySizePersonalice"
+    >
+    <div>esto lo envie desde el padre</div>
+</app-bidirecional-dos>

@@ -1,0 +1,22 @@
+<div class="containter">
+    <div class="row">
+        <div class="col">
+            Contador: {{ intervals() }}
+        </div>
+
+        <button 
+            (click)="start()">
+            Iniciar
+        </button>
+
+        <button
+            (click)="stop()">
+            Detener
+        </button>
+    </div>
+
+    <app-interaction-father-child-variable-local-dos
+        #variableLocalChild>
+
+    </app-interaction-father-child-variable-local-dos>
+</div>
