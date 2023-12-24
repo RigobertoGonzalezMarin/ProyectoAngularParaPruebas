@@ -24,6 +24,10 @@ const routes: Routes = [
   { path: 'pdf-generate', component: PdfGenerateComponent },
   { path: 'use-templateref', component: UseTemplaterefComponent },
   { path: '', pathMatch: 'full', redirectTo: 'profile_editor' },
+  {
+    path: 'ngrx',
+    loadChildren: () => import('./ngrx-app/ngrx-app.module').then(m => m.NgrxAppModule)
+  }
 ];
 
 @NgModule({

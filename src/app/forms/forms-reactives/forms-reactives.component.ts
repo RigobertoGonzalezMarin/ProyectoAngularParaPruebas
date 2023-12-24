@@ -15,6 +15,7 @@ export class FormsReactivesComponent implements OnInit {
 
   heroForm!: FormGroup; 
   heroFormCrossed!: FormGroup;
+  campoPrueba: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -34,6 +35,11 @@ export class FormsReactivesComponent implements OnInit {
       name: new FormControl(),
       otherName: new FormControl(),
       power: new FormControl(),
+      // weaknesses = debilidades
+      weaknesses: new FormControl('', [
+        Validators.required,
+        Validators.pattern("^[a-z0-9_-]{8,15}$")
+      ]),
       alias: new FormControl('', {
         asyncValidators: [
           this.uniqueAliasValidator.validate.bind(this.uniqueAliasValidator)

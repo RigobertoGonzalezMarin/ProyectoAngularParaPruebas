@@ -57,6 +57,16 @@
         required
       />
     </div>
+    <div class="">
+      <label for="weaknesses">Debilidades</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="weaknesses"
+        name="weaknesses"
+        id="weaknesses"
+      />
+    </div>
     <div class="async">
       <label for="alias">Alias</label>
       <input
@@ -79,4 +89,14 @@
     Los nombres deben de ser diferentes
   </div>
   <div class="alert" *ngIf="heroFormCrossed.pending">cargando...</div>
+</div>
+
+<hr>
+
+<div>
+  <h3>Borrador</h3>
+
+  <div>
+    <input type="text" [(ngModel)]="campoPrueba" pattern="^[A-Za-z0-9\S]+$">
+  </div>
 </div>

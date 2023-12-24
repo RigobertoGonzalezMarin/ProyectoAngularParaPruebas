@@ -27,6 +27,8 @@ import { PdfGenerateComponent } from './pdf/pdf-generate/pdf-generate.component'
 import { UseTemplaterefComponent } from './components/use-templateref/use-templateref.component';
 import { MessageChildComponent } from './components/use-templateref/components/message-child/message-child.component';
 import { ContentProjectionNgContentTresComponent } from './components/content-projection-ng-content-tres/content-projection-ng-content-tres.component';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { ContentProjectionNgContentTresComponent } from './components/content-pr
     ContentProjectionNgContentTresComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,

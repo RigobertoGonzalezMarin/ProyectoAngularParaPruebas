@@ -52,3 +52,19 @@ It depends on what you do with it.
     *ngTemplateOutlet="content && content.templateRef">
     This text is not displayed
 </ng-container> 
+
+<hr>
+
+<div class="main">
+    <app-content-projection-ng-content-tres>
+        <div class="row">
+            <div class="col-12">
+                Contenido mediante ng-content 3
+            </div>
+        </div>
+    </app-content-projection-ng-content-tres>
+</div>
+
+<div class="wrapper">
+    <button (click)="doRequest()">Hacer petición</button>
+</div>
