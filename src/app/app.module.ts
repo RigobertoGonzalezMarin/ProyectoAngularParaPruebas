@@ -55,10 +55,10 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     HttpClientModule,
-    BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
     MatTabsModule,
     MatIconModule

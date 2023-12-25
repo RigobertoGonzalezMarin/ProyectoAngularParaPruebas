@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'ngrx',
     loadChildren: () => import('./ngrx-app/ngrx-app.module').then(m => m.NgrxAppModule)
+  },
+  {
+    path: 'calendario',
+    loadChildren: () => import('./calendario/calendario.module').then(m => m.CalendarioModule)
   }
 ];
 
